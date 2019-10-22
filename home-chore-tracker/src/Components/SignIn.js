@@ -1,9 +1,7 @@
 import React , { useState, useEffect } from 'react';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from "yup";
-import {
-    Card, Container, Row, Col, Button
-  } from 'reactstrap';
+import { Card, Row, Button } from 'reactstrap';
 
   const SignIn = ({ errors, touched, values, status }) => {
     const [users, setUsers] = useState([]);
@@ -13,46 +11,51 @@ import {
   
     return (
       <div className="Onboard-form">
-        <Card>
-            <Form>
-                <Row>
-                    <Field 
-                        type="text" 
-                        name="email" 
-                        placeholder="email" />
-                        {touched.email && errors.email && (
-                        <p className="error">{errors.email}</p>
-                        )}
-                </Row>
-                
-                <Row>
-                    <Field 
-                        type="text" 
-                        name="password" 
-                        placeholder="password" />
-                        {touched.password && errors.password && (
-                        <p className="error">{errors.password}</p>
-                        )}
-                </Row>
-                
-                <Row>
-                    <label className="checkbox-container">
-                        Terms of Service
-                        <Field
-                        type="checkbox"
-                        name="terms"
-                        checked={values.terms}
-                        />
-                        <span className="checkmark" />
-                    </label>
-                </Row>
-                
-                <Row>
-                    <Button type="submit">Sign In</Button>
-                </Row>
-            </Form>
-        </Card>
-  
+        
+            <Card body inverse color="success" className="text-center">
+                <Form className = "row-container">
+                    <Row>
+                        <Field 
+                            type="text" 
+                            name="email" 
+                            placeholder="email" />
+                            {touched.email && errors.email && (
+                            <p className="error">{errors.email}</p>
+                            )}
+                    </Row>
+                    
+                    <Row>
+                        <Field 
+                            type="text" 
+                            name="password" 
+                            placeholder="password" />
+                            {touched.password && errors.password && (
+                            <p className="error">{errors.password}</p>
+                            )}
+                    </Row>
+                    
+                    {/* <Row>
+                        <label className="checkbox-container">
+                            Terms of Service
+                            <Field
+                            type="checkbox"
+                            name="terms"
+                            checked={values.terms}
+                            />
+                            <span className="checkmark" />
+                        </label>
+                    </Row> */}
+                    
+                    <Row className ="button-row">
+                        <Button color="warning" type="submit">Sign In</Button>
+                        <Button color="warning" type="submit">Sign Up</Button>
+                    </Row>
+
+                    {/* <Row>
+                    </Row> */}
+                </Form>
+            </Card>
+        
        
       </div>
     );
@@ -61,15 +64,13 @@ import {
   const FormikSignIn = withFormik({mapPropsToValues({email, password, terms}) {
       return {
         email: email || "",
-        password: password || "",
-        terms: terms || ""
+        password: password || ""
       };
     },
   
     validationSchema: Yup.object().shape({
       email: Yup.string().required("email is required"),
-      password: Yup.string().required("Password is required"),
-      terms: Yup.string().required("Accepting the terms and conditions is mandatory")
+      password: Yup.string().required("Password is required")   
      }),
   
     // handleSubmit(values, { setStatus }) {
