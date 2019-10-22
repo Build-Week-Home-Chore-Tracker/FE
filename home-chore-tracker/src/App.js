@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import ParentPage from './Components/ParentPage';
+// import Signin from './Components/Signin';
+import PrivateRoute from './Components/PrivateRoute';
 import './App.css';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PrivateRoute exact path="/ParentPage" component={ParentPage} />
+    <h1>Welcome to Home Chore Tracking App</h1>
     </div>
+    </Router>
   );
 }
-
 export default App;
