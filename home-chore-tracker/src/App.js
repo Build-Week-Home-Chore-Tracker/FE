@@ -21,7 +21,7 @@ function App() {
           <nav>
           <Link to="/ChildTaskList">Child Tasks</Link>
           </nav>
-          <h1>Welcome to Home Chore Tracking App</h1>
+         
         
         </>
       }/>
