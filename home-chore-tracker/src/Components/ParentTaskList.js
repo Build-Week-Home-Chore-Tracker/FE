@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import axiosWithAuth from "../utils/axiosWithAuth";
 
+
+
 const initialData = [ {
-  task: "Laundry"
+  taskName: "Laundry"
 },
 {
-  task: "Dishes"
+  taskName: "Dishes"
 },
 {
-  task: "Cleaning"
+  taskName: "Cleaning"
 }
 ]
  
-
-
 const ParentTaskList = () => {
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(initialData);
     const [users, setUsers] = useState([]);
     const [addTask, setAddTask] = useState([]);
 
@@ -48,12 +48,9 @@ const ParentTaskList = () => {
 
         <div className="family-tasks">
          <h1>Family Home Chore Tracker</h1>
-          {users.map(user => (
+          {tasks.map(task => (
             <div>
-              <h3>{user.name}</h3>
-              <div>{user.familyName}</div>
-              <div>{user.username}</div>
-              <div>{user.role}</div>
+              <div>{task.taskName} X </div>
            </div>
             ))
           }
