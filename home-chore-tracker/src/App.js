@@ -4,11 +4,15 @@ import ParentTaskList from './Components/ParentTaskList';
 // import Signin from './Components/Signin';
 import PrivateRoute from './Components/PrivateRoute';
 import './App.css';
+import Header from './Components/Header';
+import SignIn from './Components/SignIn';
 
 function App() {
   return (
     <Router>
     <div className="App">
+      <Header />
+      <SignIn />
       <Route exact path="/" component={ (props) =>
         <>
           <nav>
