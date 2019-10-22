@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function ChildPage() {
+function ChildTaskList() {
   return (
     <div className="child-page">
      <h1>Welcome to Child Home Chore Tracker</h1>
@@ -9,5 +9,5 @@ function ChildPage() {
   );
 }
 
-export default ChildPage;
+export default ChildTaskList;
 
