@@ -3,8 +3,6 @@ import axiosWithAuth from "../utils/axiosWithAuth";
 // import ParentChoreSearch from './ParentChoreSearch';
 
 
-
-
 const ParentTaskList = () => {
     const [chores, setChores] = useState([]);
     const [editing, setEditing] = useState(false);
@@ -20,12 +18,6 @@ const ParentTaskList = () => {
 
     }, [])
 
-    // const deleteChore = chore => {
-    //   // e.preventDefault();
-    //  axiosWithAuth()
-    //   .delete(`/chores/${chore.id}`)
-    //   .then(res => console.log(res))
-    //   .catch(err => console.log(err.response));
 
     return (
       <>
