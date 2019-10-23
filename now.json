@@ -2,7 +2,7 @@
     "version": 2,
     "name": "home-chore-tracker",
     "builds": [
-        { "src": "/home-chore-tracker/package.json", "use": "@now/static-build ", "config": {"distDir": "build"} }],
+        { "src": "/home-chore-tracker/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
     "routes": [
         { "src": "/(.*)", "dest": "home-chore-tracker/$1" }
     ]
