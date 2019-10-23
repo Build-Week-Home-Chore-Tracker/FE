@@ -1,19 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axiosWithAuth from "../utils/axiosWithAuth";
+// import ParentChoreSearch from './ParentChoreSearch';
 
 
 
-// const initialData = [ {
-//   taskName: "Laundry"
-// },
-// {
-//   taskName: "Dishes"
-// },
-// {
-//   taskName: "Cleaning"
-// }
-// ]
- 
+
 const ParentTaskList = () => {
     const [chores, setChores] = useState([]);
     // const [users, setUsers] = useState([]);
@@ -29,10 +20,6 @@ const ParentTaskList = () => {
 
     }, [])
 
-      //Add Task
-    const addNewTask = (props) => {
-      console.log(props);
-    }
 
     return (
       <>
@@ -53,21 +40,18 @@ const ParentTaskList = () => {
               <div className="chore-card">{chore.choreName} 
               <button className="chore-btn">Edit</button>
               <button className="chore-btn">Delete</button>
-               </div>
-
            </div>
-            ))
+       </div>
+        ))
           }
         </div>
         </>
       );
 
 
-    
-
-  
 }
 
 
 
 export default ParentTaskList;
+
