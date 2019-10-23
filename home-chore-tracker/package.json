@@ -1,5 +1,3 @@
-
-
 {
   "name": "home-chore-tracker",
   "version": "0.1.0",
@@ -9,6 +7,7 @@
     "bootstrap": "^4.3.1",
     "formik": "^1.5.8",
     "material-ui": "^0.20.2",
+    "now": "^16.4.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",
@@ -25,7 +24,6 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  
   "browserslist": {
     "production": [
       ">0.2%",
