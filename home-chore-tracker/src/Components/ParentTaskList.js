@@ -7,8 +7,8 @@ import axiosWithAuth from "../utils/axiosWithAuth";
 
 const ParentTaskList = () => {
     const [chores, setChores] = useState([]);
-    // const [users, setUsers] = useState([]);
-    // const [addTask, setAddTask] = useState([]);
+    const [editing, setEditing] = useState(false);
+
 
     useEffect(() => {
     axiosWithAuth()
@@ -20,6 +20,12 @@ const ParentTaskList = () => {
 
     }, [])
 
+    // const deleteChore = chore => {
+    //   // e.preventDefault();
+    //  axiosWithAuth()
+    //   .delete(`/chores/${chore.id}`)
+    //   .then(res => console.log(res))
+    //   .catch(err => console.log(err.response));
 
     return (
       <>
