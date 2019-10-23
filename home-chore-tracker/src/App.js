@@ -10,7 +10,6 @@ import SignIn from './Components/SignIn';
 function App() {
   return (
     <div className="App">
-     
       <Router>
         <Switch>
           <Route exact path="/" component={SignIn} />

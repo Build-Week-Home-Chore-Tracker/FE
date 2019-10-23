@@ -3,29 +3,29 @@ import axiosWithAuth from "../utils/axiosWithAuth";
 
 
 
-const initialData = [ {
-  taskName: "Laundry"
-},
-{
-  taskName: "Dishes"
-},
-{
-  taskName: "Cleaning"
-}
-]
+// const initialData = [ {
+//   taskName: "Laundry"
+// },
+// {
+//   taskName: "Dishes"
+// },
+// {
+//   taskName: "Cleaning"
+// }
+// ]
  
 const ParentTaskList = () => {
-    const [tasks, setTasks] = useState(initialData);
-    const [users, setUsers] = useState([]);
-    const [addTask, setAddTask] = useState([]);
+    const [chores, setChores] = useState([]);
+    // const [users, setUsers] = useState([]);
+    // const [addTask, setAddTask] = useState([]);
 
     useEffect(() => {
     axiosWithAuth()
-    .get("/users/all")
+    .get("/chores")
     .then(res => {
       console.log(res.data);
-      setUsers(res.data);
-    }).catch(err =>  console.err(err))
+      setChores(res.data);
+    }).catch(err => console.log(err))
 
     }, [])
 
@@ -48,9 +48,13 @@ const ParentTaskList = () => {
 
         <div className="family-tasks">
          <h1>Family Home Chore Tracker</h1>
-          {tasks.map(task => (
+          {chores.map(chore => (
             <div>
-              <div>{task.taskName} X </div>
+              <div className="chore-card">{chore.choreName} 
+              <button className="chore-btn">Edit</button>
+              <button className="chore-btn">Delete</button>
+               </div>
+
            </div>
             ))
           }
