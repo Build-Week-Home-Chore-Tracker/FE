@@ -1,69 +1,116 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, forceUpdate } from 'react';
 import axiosWithAuth from "../utils/axiosWithAuth";
+import { Link } from "react-router-dom";
+// import ChildTaskList from './ChildTaskList';
+// import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+// import ParentChoreSearch from './ParentChoreSearch';
 
 
 
-const initialData = [ {
-  taskName: "Laundry"
-},
-{
-  taskName: "Dishes"
-},
-{
-  taskName: "Cleaning"
-}
-]
- 
 const ParentTaskList = () => {
-    const [tasks, setTasks] = useState(initialData);
-    const [users, setUsers] = useState([]);
-    const [addTask, setAddTask] = useState([]);
+    const [chores, setChores] = useState([]);
+    const [choreId, setChoreId] = useState();
+    const [assignedChores, setAssignedChores] = useState([]);
+    const [editing, setEditing] = useState(false);
+
+    const findChoreName = id => {
+      return chores.filter(c => c.choreId == id)[0].choreName;
+    }
+
+    const fetchAssignedChores = () => {
+      axiosWithAuth()
+      .get("/assign/all")
+      .then(res => {
+        console.log(res.data);
+        console.log(localStorage.getItem('userId'))
+        const myChores = res.data.filter(c => c.userId == localStorage.getItem('userId'));
+        console.log("Assinging:")
+        console.log(myChores)
+        setAssignedChores(myChores);
+      }).catch(err => console.log(err))
+    }
 
     useEffect(() => {
-    axiosWithAuth()
-    .get("/users/all")
-    .then(res => {
-      console.log(res.data);
-      setUsers(res.data);
-    }).catch(err =>  console.err(err))
+        axiosWithAuth()
+        .get("/chores")
+        .then(res => {
+          console.log(res.data);
+          setChores(res.data);
+        }).catch(err => console.log(err))
+  
+        fetchAssignedChores();
 
     }, [])
 
-      //Add Task
-    const addNewTask = (props) => {
-      console.log(props);
+    const assignChoreHandle = e => {
+      // e.preventDefaut();
+      console.log("Assigning!");
+      // return false;
+      axiosWithAuth()
+      .post(`assign/user/${localStorage.getItem('userId')}`, {choreId: choreId})
+      .then(res => {
+        console.log('assigned the chore');
+        fetchAssignedChores();
+      }).catch(err => console.log(err))
+    }
+
+
+
+
+    const handleSelectChange = event => {
+      console.log(event.target.value);
+
+      setChoreId(event.target.value);
+    }
+
+    const deleteChore = chore => {
+      // e.preventDefault();
+     axiosWithAuth()
+      .delete(`/assign/user/chore/${chore.choreListId}/delete`) 
+      .then(res => {
+        console.log(res);
+        fetchAssignedChores();
+      })
+      .catch(err => console.log(err.response));
     }
 
     return (
       <>
-        <div>
-        <form>
-        <hr />
-          <label>Add Task</label>
-          <input name='taskName'></input>
-            <button>Add</button>
-        </form>
-        </div>
-        <hr />
+
 
         <div className="family-tasks">
+        <div>
+        <Link to="/ChildTaskList"><button>Child Task List</button></Link>
+      </div>
          <h1>Family Home Chore Tracker</h1>
-          {tasks.map(task => (
-            <div>
-              <div>{task.taskName} X </div>
-           </div>
+          
+
+            <select onChange={handleSelectChange}>
+            {chores.map(chore => (
+           <option value={chore.choreId}>{chore.choreName}</option>
             ))
-          }
+            }
+            </select>
+            <button className="chore-btn" onClick={assignChoreHandle}>Assign Chore</button>
+
+
+         <div className="chore-list">
+           <h3>Chore List</h3>
+           {assignedChores.map(chore => (
+              <div>{findChoreName(chore.choreId)}
+             <span> ✏  </span>
+             <span className="delete" onClick={() => deleteChore(chore)}> X </span> 
+             <hr/>
+             </div>
+             ))
+           }
+         </div>
         </div>
         </>
       );
-
-
-    
-
-  
 }
 
 
 
 export default ParentTaskList;
+

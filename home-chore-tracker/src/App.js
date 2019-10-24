@@ -1,43 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ParentTaskList from './Components/ParentTaskList';
+import ChildTaskList from './Components/ChildTaskList';
 // import Signin from './Components/Signin';
 // import PrivateRoute from './Components/PrivateRoute';
 import './App.css';
-import Header from './Components/Header';
 import SignIn from './Components/SignIn';
+import FamilyPage from './Components/FamilyPage';
 import SignUp from './Components/SignUp';
 import ChildTaskList from './Components/ChildTaskList'
 
 function App() {
   return (
-    // <Router>
-    // <div className="App">
-    //   <Header />
-      
-    //   {/* <SignUp /> */}
-    //   <Route exact path="/" component={ (props) =>
-    //     <>
-    //       <nav>
-    //       <Link to="/ParentTaskList">Parent Tasks</Link>
-    //       </nav>
-    //       <nav>
-    //       <Link to="/ChildTaskList">Child Tasks</Link>
-    //       </nav> 
-    //     </>
-    //   }/>
-      
-    //   <SignIn />      
-    //   <PrivateRoute exact path="/ParentTaskList" component={ParentTaskList} />
-    // </div>
-    // </Router>
-    <Router>
+     <Router>
       <div className="app">
-        <Header />
-        
+        <Header />        
         
         <Switch>
-          <Route path="/signin">
+          <Route path="/Login">
             <SignIn />
           </Route>
 
@@ -45,18 +25,20 @@ function App() {
             <SignUp />
           </Route>
 
-          <Route path="/parenttasklist">
+          <PrivateRoute exact path="/ParentTaskList">
             <ParentTaskList />
           </Route>
 
-          <Route path="/childtasklist">
+          <PrivateRoute exact path="/ChildTaskList">
             <ChildTaskList />
           </Route>
-
+    
+          <PrivateRoute exact path="/FamilyPage">
+              <FamilyPage />
+          </Route>
         </Switch>
       </div>
     </Router>
-
   );
 }
 export default App;

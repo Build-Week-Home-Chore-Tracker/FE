@@ -2,6 +2,8 @@ import React , { useState, useEffect } from 'react';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from "yup";
 import { Card, Row, Button } from 'reactstrap';
+import Header from "../Components/Header";
+import axios from "axios";
 
   const SignIn = ({ errors, touched, values, status }, props) => {
     console.log(props)
@@ -12,16 +14,17 @@ import { Card, Row, Button } from 'reactstrap';
   
     return (
       <div className="Onboard-form">
+           <Header />
         
             <Card body inverse color="success" className="text-center">
                 <Form className = "row-container">
                     <Row>
                         <Field 
                             type="text" 
-                            name="email" 
-                            placeholder="email" />
-                            {touched.email && errors.email && (
-                            <p className="error">{errors.email}</p>
+                            name="username" 
+                            placeholder="username" />
+                            {touched.username && errors.username && (
+                            <p className="error">{errors.username}</p>
                             )}
                     </Row>
                     
@@ -45,18 +48,31 @@ import { Card, Row, Button } from 'reactstrap';
     );
   };
 
-  const FormikSignIn = withFormik({mapPropsToValues({email, password, terms}) {
+  const FormikSignIn = withFormik({mapPropsToValues({username, password, terms}) {
       return {
-        email: email || "",
+        username: username || "",
         password: password || ""
       };
     },
   
     validationSchema: Yup.object().shape({
-      email: Yup.string().required("email is required"),
+      username: Yup.string().required("username is required"),
       password: Yup.string().required("Password is required")   
      }),
   
-     
+    handleSubmit(values, { props, setStatus }) {
+      axios
+        // values is our object with all our data on it.
+        .post("https://home-chore-tracker88.herokuapp.com/api/auth/login", values)
+        .then(res => {
+          setStatus(res.data);
+          console.log(res);
+          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("userId", res.data.userId);
+          props.history.push('/FamilyPage')
+        })
+        .catch(err => console.log(err.response));
+    }
+
   })(SignIn); // currying functions in Javascript
  export default FormikSignIn;
