@@ -53,7 +53,12 @@ const ParentTaskList = () => {
             </select>
             <button className="chore-btn">Assign Chore</button>
           </form>
-
+         <div className="chore-list">
+           <h3>Chore List</h3>
+           <p>Laundry X</p>
+           <p>Wipe Floors X</p>
+           <p>Dishwashing X </p>
+         </div>
         </div>
         </>
       );

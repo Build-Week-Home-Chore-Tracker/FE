@@ -84,6 +84,7 @@ import axios from "axios";
           setStatus(res.data);
           console.log(res);
           localStorage.setItem("token", res.data.token);
+          localStorage.setItem("userId", res.data.userId);
           props.history.push('/FamilyPage')
         })
         .catch(err => console.log(err.response));
