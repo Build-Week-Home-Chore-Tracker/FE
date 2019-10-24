@@ -12,8 +12,8 @@ function Points() {
   
   useEffect(() => {
     axiosWithAuth()
-    // .get(`/chores/${localStorage.getItem("userId")}/points`)
-    .get(`/chores/2/points`)
+    .get(`/chores/${localStorage.getItem("userId")}/points`)
+    // .get(`/chores/2/points`)
     .then(res => {
       console.log(res.data);
       setPoints(res.data[0]);

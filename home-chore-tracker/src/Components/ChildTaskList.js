@@ -6,9 +6,10 @@ import Points from "./Points"
 function ChildTaskList() {
   const [chores, setChores] = useState([]);
 
+  
   useEffect(() => {
     axiosWithAuth()
-      .get("/chores")
+      .get(`/assign/chores/user/${localStorage.getItem('userId')}`)
       .then(res => {
         console.log(res.data);
         setChores(res.data);
@@ -21,21 +22,21 @@ function ChildTaskList() {
     <>
      <div className="family-tasks">
        <h1>Child Home Chore Tracker</h1>
-        {/* {chores.map(chore => (
+        {chores.map(chore => (
           <div>
             <div className="chore-card">{chore.choreName} 
             <button className="chore-btn">mark as done</button>
          </div>
      </div>
       ))
-        } */}
+        }
 
-        <div className="chore-list">
+        {/* <div className="chore-list">
            <h3>Chore List</h3>
            <p>Laundry X</p>
            <p>Wipe Floors X</p>
            <p>Dishwashing X </p>
-         </div>
+         </div> */}
 
          <Points />
 
