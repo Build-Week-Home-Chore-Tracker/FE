@@ -2,12 +2,25 @@ import React , { useState, useEffect } from 'react';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from "yup";
 import { Card, Row, Button } from 'reactstrap';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
+import SignUp from './SignUp';
 
-  const SignIn = ({ errors, touched, values, status }) => {
+  const SignIn = ({ errors, touched, values, status }, props) => {
+    console.log(props)
     const [users, setUsers] = useState([]);
     useEffect(() => {
       status && setUsers(users => [...users, status]);
     }, [status]);
+
+    // function showpage () {
+    //   return <SignUp />
+    // }
   
     return (
       <div className="Onboard-form">
@@ -32,28 +45,32 @@ import { Card, Row, Button } from 'reactstrap';
                             {touched.password && errors.password && (
                             <p className="error">{errors.password}</p>
                             )}
-                    </Row>
+                    </Row> 
+                    <Button color="warning" type="submit">Login</Button>
                     
-                    {/* <Row>
-                        <label className="checkbox-container">
-                            Terms of Service
-                            <Field
-                            type="checkbox"
-                            name="terms"
-                            checked={values.terms}
-                            />
-                            <span className="checkmark" />
-                        </label>
-                    </Row> */}
-                    
-                    <Row className ="button-row">
-                        <Button color="warning" type="submit">Sign In</Button>
-                        <Button color="warning" type="submit">Sign Up</Button>
-                    </Row>
-
-                    {/* <Row>
-                    </Row> */}
                 </Form>
+                <Link to="/signup">
+                <Button > Register </Button>
+                </Link>
+
+                
+                {/* <Row className ="button-row">
+                       <Button color="primary" type="submit">  
+                        <Router>
+                          
+                          <Link to = "/signup"> 
+                              Register
+                         </Link>
+
+                          <Switch>
+                            <Route exact path = "/signup">
+                              <SignUp />
+                            </Route>
+                          </Switch>
+                          
+                        </Router>
+                      </Button>
+                    </Row> */}
             </Card>
         
        
@@ -73,15 +90,6 @@ import { Card, Row, Button } from 'reactstrap';
       password: Yup.string().required("Password is required")   
      }),
   
-    // handleSubmit(values, { setStatus }) {
-    //   axios
-    //     // values is our object with all our data on it.
-    //     .post("https://reqres.in/api/users/", values)
-    //     .then(res => {
-    //       setStatus(res.data);
-    //       console.log(res);
-    //     })
-    //     .catch(err => console.log(err.response));
-    // }
+     
   })(SignIn); // currying functions in Javascript
  export default FormikSignIn;
