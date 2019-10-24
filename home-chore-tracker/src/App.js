@@ -6,6 +6,7 @@ import ChildTaskList from './Components/ChildTaskList';
 import PrivateRoute from './Components/PrivateRoute';
 import './App.css';
 import SignIn from './Components/SignIn';
+import FamilyPage from './Components/FamilyPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={SignIn} />
           <Route exact path="/Login" component={SignIn} />
+          <PrivateRoute exact path="/FamilyPage" component={FamilyPage} />
           <PrivateRoute exact path="/ChildTaskList" component={ChildTaskList} />
           <PrivateRoute exact path="/ParentTaskList" component={ParentTaskList} />
         </Switch>
