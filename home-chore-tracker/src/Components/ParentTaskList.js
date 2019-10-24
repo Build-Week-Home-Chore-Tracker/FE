@@ -1,10 +1,11 @@
 import React, { useState, useEffect, forceUpdate } from 'react';
 import axiosWithAuth from "../utils/axiosWithAuth";
+import { Link } from "react-router-dom";
 // import ChildTaskList from './ChildTaskList';
 // import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 // import ParentChoreSearch from './ParentChoreSearch';
 
-import { Link } from "react-router-dom"
+
 
 const ParentTaskList = () => {
     const [chores, setChores] = useState([]);
@@ -86,7 +87,7 @@ const ParentTaskList = () => {
 
             <select onChange={handleSelectChange}>
             {chores.map(chore => (
-              <option value={chore.choreId}>{chore.choreName}</option>
+           <option value={chore.choreId}>{chore.choreName}</option>
             ))
             }
             </select>
