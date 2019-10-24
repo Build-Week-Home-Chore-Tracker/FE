@@ -4,6 +4,8 @@ import axiosWithAuth from "../utils/axiosWithAuth";
 // import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 // import ParentChoreSearch from './ParentChoreSearch';
 
+import { Link } from "react-router-dom"
+
 const ParentTaskList = () => {
     const [chores, setChores] = useState([]);
     const [choreId, setChoreId] = useState();
@@ -51,16 +53,34 @@ const ParentTaskList = () => {
       }).catch(err => console.log(err))
     }
 
+
+
+
     const handleSelectChange = event => {
       console.log(event.target.value);
 
       setChoreId(event.target.value);
     }
+
+    const deleteChore = chore => {
+      // e.preventDefault();
+     axiosWithAuth()
+      .delete(`/assign/user/chore/${chore.choreListId}/delete`) 
+      .then(res => {
+        console.log(res);
+        fetchAssignedChores();
+      })
+      .catch(err => console.log(err.response));
+    }
+
     return (
       <>
 
 
         <div className="family-tasks">
+        <div>
+        <Link to="/ChildTaskList"><button>Child Task List</button></Link>
+      </div>
          <h1>Family Home Chore Tracker</h1>
           
 
@@ -76,15 +96,17 @@ const ParentTaskList = () => {
          <div className="chore-list">
            <h3>Chore List</h3>
            {assignedChores.map(chore => (
-              <div>{findChoreName(chore.choreId)}</div>
-            ))
+              <div>{findChoreName(chore.choreId)}
+             <span> ✏  </span>
+             <span className="delete" onClick={() => deleteChore(chore)}> X </span> 
+             <hr/>
+             </div>
+             ))
            }
          </div>
         </div>
         </>
       );
-
-
 }
 
 
