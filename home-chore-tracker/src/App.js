@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ParentTaskList from './Components/ParentTaskList';
 // import Signin from './Components/Signin';
-import PrivateRoute from './Components/PrivateRoute';
+// import PrivateRoute from './Components/PrivateRoute';
 import './App.css';
 import Header from './Components/Header';
 import SignIn from './Components/SignIn';
@@ -33,12 +33,7 @@ function App() {
     // </Router>
     <Router>
       <div className="app">
-        <nav>          
-          <Link to="/signin">Login</Link>
-          <Link to="/signup">Register</Link>
-          <Link to="/parenttasklist">Parent Dashboard</Link>
-          <Link to="/childtasklist">Child Dashboard</Link> 
-        </nav>
+        <Header />
         <Switch>
           <Route path="/signin">
             <SignIn />

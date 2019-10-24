@@ -17,6 +17,8 @@ code {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 25vh;
+  padding-bottom: 30vh;
 }
 
 /* .card-deck{  
@@ -44,3 +46,5 @@ code {
   .input{
     padding: 1rem;
   }
+
+ 

@@ -2,14 +2,6 @@ import React , { useState, useEffect } from 'react';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from "yup";
 import { Card, Row, Button } from 'reactstrap';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect
-} from "react-router-dom";
-import SignUp from './SignUp';
 
   const SignIn = ({ errors, touched, values, status }, props) => {
     console.log(props)
@@ -17,10 +9,6 @@ import SignUp from './SignUp';
     useEffect(() => {
       status && setUsers(users => [...users, status]);
     }, [status]);
-
-    // function showpage () {
-    //   return <SignUp />
-    // }
   
     return (
       <div className="Onboard-form">
@@ -49,28 +37,7 @@ import SignUp from './SignUp';
                     <Button color="warning" type="submit">Login</Button>
                     
                 </Form>
-                <Link to="/signup">
-                <Button > Register </Button>
-                </Link>
-
                 
-                {/* <Row className ="button-row">
-                       <Button color="primary" type="submit">  
-                        <Router>
-                          
-                          <Link to = "/signup"> 
-                              Register
-                         </Link>
-
-                          <Switch>
-                            <Route exact path = "/signup">
-                              <SignUp />
-                            </Route>
-                          </Switch>
-                          
-                        </Router>
-                      </Button>
-                    </Row> */}
             </Card>
         
        
