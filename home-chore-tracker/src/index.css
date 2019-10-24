@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.Onboard-form{
+.signInForm{
   width: 30%;
   display: block;
   margin-left: auto;
@@ -43,4 +43,18 @@ code {
 
   .input{
     padding: 1rem;
+  }
+
+  .links{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    background-color: #e0a800;
+    padding: 2rem; 
+  }
+
+  .ui.center{
+    text-align: center;
+    padding: 2rem;
+    background-color: #055596;
   }

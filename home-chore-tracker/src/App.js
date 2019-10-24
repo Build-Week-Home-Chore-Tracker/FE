@@ -5,19 +5,41 @@ import ChildTaskList from './Components/ChildTaskList';
 // import Signin from './Components/Signin';
 import PrivateRoute from './Components/PrivateRoute';
 import './App.css';
+import Header from './Components/Header';
 import SignIn from './Components/SignIn';
+import SignUp from './Components/SignUp';
 import FamilyPage from './Components/FamilyPage';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App">     
       <Router>
+        
+        <Header />
+
         <Switch>
-          <Route exact path="/" component={SignIn} />
-          <Route exact path="/Login" component={SignIn} />
+      
+          {/* <Route exact path="/" component={SignIn} /> */}
+          <Route exact path="/signin" component={SignIn} />
+          <Route path="/signup">
+            <SignUp />
+          </Route>
           <PrivateRoute exact path="/FamilyPage" component={FamilyPage} />
           <PrivateRoute exact path="/ChildTaskList" component={ChildTaskList} />
           <PrivateRoute exact path="/ParentTaskList" component={ParentTaskList} />
+
+          {/* <Route path="/signin">
+            <SignIn />
+          </Route>
+
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+
+          <PrivateRoute exact path="/FamilyPage" component={FamilyPage} />
+          <PrivateRoute exact path="/ChildTaskList" component={ChildTaskList} />
+          <PrivateRoute exact path="/ParentTaskList" component={ParentTaskList} /> */}
+        
         </Switch>
       </Router>
     </div>

@@ -2,7 +2,6 @@ import React , { useState, useEffect } from 'react';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from "yup";
 import { Card, Row, Button } from 'reactstrap';
-import Header from "../Components/Header";
 import axios from "axios";
 
   const SignIn = ({ errors, touched, values, status }) => {
@@ -12,8 +11,7 @@ import axios from "axios";
     }, [status]);
   
     return (
-      <div className="Onboard-form">
-           <Header />
+      <div className="signInForm">         
         
             <Card body inverse color="success" className="text-center">
                 <Form className = "row-container">
@@ -36,26 +34,8 @@ import axios from "axios";
                             <p className="error">{errors.password}</p>
                             )}
                     </Row>
-                    
-                    {/* <Row>
-                        <label className="checkbox-container">
-                            Terms of Service
-                            <Field
-                            type="checkbox"
-                            name="terms"
-                            checked={values.terms}
-                            />
-                            <span className="checkmark" />
-                        </label>
-                    </Row> */}
-                    
-                    <Row className ="button-row">
-                        <Button color="warning" type="submit">Sign In</Button>
-                        <Button color="warning" type="submit">Sign Up</Button>
-                    </Row>
 
-                    {/* <Row>
-                    </Row> */}
+                    <Button color="warning" type="submit">Login</Button> 
                 </Form>
             </Card>
         
