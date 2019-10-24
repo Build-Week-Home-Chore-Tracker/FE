@@ -22,7 +22,7 @@ const ParentTaskList = () => {
 
     return (
       <>
-        <div>    
+        {/* <div>    
         <form>
         <hr />
           <label>Add Task</label>
@@ -30,19 +30,30 @@ const ParentTaskList = () => {
             <button>Add</button>
         </form>
         </div>
-        <hr />
+        <hr /> */}
 
         <div className="family-tasks">
          <h1>Family Home Chore Tracker</h1>
-          {chores.map(chore => (
+          {/* {chores.map(chore => (
             <div>
               <div className="chore-card">{chore.choreName} 
-              <button className="chore-btn">Edit</button>
-              <button className="chore-btn">Delete</button>
-           </div>
-       </div>
-        ))
-          }
+                <button className="chore-btn">Edit</button>
+                <button className="chore-btn">Delete</button>
+              </div>
+            </div>
+          ))
+          } */}
+
+          <form>
+            <select>
+            {chores.map(chore => (
+              <option value={chore.choreName}>{chore.choreName}</option>
+            ))
+            }
+            </select>
+            <button className="chore-btn">Assign Chore</button>
+          </form>
+
         </div>
         </>
       );

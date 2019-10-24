@@ -84,7 +84,7 @@ import axios from "axios";
           setStatus(res.data);
           console.log(res);
           localStorage.setItem("token", res.data.token);
-          props.history.push('/ParentTaskList')
+          props.history.push('/FamilyPage')
         })
         .catch(err => console.log(err.response));
     }
