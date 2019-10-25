@@ -46,7 +46,7 @@ function UserDetails({user}) {
   const{name,familyNameID,role} = user;
   return(
     <div className = "individualCards">
-      <Row>
+      {/* <Row> */}
         <Col sm="3">     
           <Card body className = "text-center">
             <CardTitle>Name: {name}</CardTitle>
@@ -54,7 +54,7 @@ function UserDetails({user}) {
             <CardText>Role: {role}</CardText>
           </Card>
         </Col>
-      </Row>  
+      {/* </Row>   */}
     </div>
   );
 };

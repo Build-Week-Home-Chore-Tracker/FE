@@ -28,8 +28,11 @@ class ListTasks extends React.Component {
         return <div className="chores-wrap">
             {this.props.fetching ? <Loader color="#7bff00" /> : null}
             {this.props.tasks.map(task => (
+             
                 <div>
+                      <div>  <h3 className="h3">Your chore</h3></div>
                     <label>
+                        
                  {task.choreName} 
                  {task.choreId} 
                     <input className="checkbox"
