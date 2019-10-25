@@ -13,7 +13,7 @@ class ChildTaskList extends React.Component {
 
   return (
     <>
-    <h1>Child home chore tracker</h1>
+    <h1 className="main-header">Child home chore tracker</h1>
      <div className="child-chores">
 
         <div className="chore-list"> 
@@ -21,7 +21,7 @@ class ChildTaskList extends React.Component {
         </div>
       
        <div className="rewards-list">
-         <h3>Rewards List</h3>
+         <h3 className="main-header">Rewards List</h3>
          <p>10 Points🌟 <span className="dash">|</span> Choose a family activity  </p>
          <p>20 Points🌟 <span className="dash">|</span>   An extra story at bedtime </p>
          <p>30 Point🌟  <span className="dash">|</span>  Ice Cream or Cake</p>

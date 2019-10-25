@@ -95,12 +95,9 @@ const ParentTaskList = () => {
 
 
         <div className="assign-chore">
-        <div>
-        {/* <Link to="/ChildTaskList"><button>Child Task List</button></Link> */}
-      </div>
+  
          <h1>Assign chores</h1>
-          
-
+    
             <select onChange={handleSelectChange}>
             {chores.map(chore => (
            <option value={chore.choreId}>{chore.choreName}</option>
