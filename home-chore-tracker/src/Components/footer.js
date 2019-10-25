@@ -2,7 +2,7 @@ import React from "react"
 
 function Footer() {
     return (
-        <footer>Saltines © 2019</footer>
+        <footer className="footer" >Home Chore Tracker © 2019</footer>
     )
 }
 

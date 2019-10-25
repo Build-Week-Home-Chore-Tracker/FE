@@ -25,6 +25,8 @@
   margin: 0 auto;
   width: 40%;
   height: 100%;
+  box-shadow: -10px -10px 30px 4px rgba(0,0,0,0.1),
+  10px 10px 30px 4px rgba(45,78,255,0.15);
 }
 
 .add-chore{
@@ -96,6 +98,8 @@ hr{
   margin-right: 80px;
   height: 100%;
   margin-bottom: 20px;
+  box-shadow: -10px -10px 30px 4px rgba(0,0,0,0.1),
+  10px 10px 30px 4px rgba(45,78,255,0.15);
 }
 
 .main-header{
@@ -111,5 +115,12 @@ hr{
 footer{
   background-color:orange;
   padding: 2%;
-  color: #ffffff;
+  color: darkblue;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.h3{
+  margin-top: 12px;
 }

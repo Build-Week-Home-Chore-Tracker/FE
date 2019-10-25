@@ -11,7 +11,7 @@ import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
 import FamilyPage from './Components/FamilyPage';
 import ManageChoresPage from './Components/ManageChoresPage'
-import Footer from './Components/Footer'
+import Footer from './Components/Footer';
 
 
 
