@@ -12,10 +12,12 @@ class ListChores extends React.Component {
     render() {
     
         return <div className="chores-wrap">
-            Chores List
             {this.props.fetching ? <Loader color="#7bff00" /> : null}
             {this.props.chores.map(chore => (
-                <div>{chore.choreName} : {chore.chorePointValue}</div>
+                <div>{chore.choreName} : {chore.chorePointValue}
+                  <hr/>
+                </div>
+              
             ))}
 
            </div>

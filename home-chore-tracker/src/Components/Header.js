@@ -5,14 +5,16 @@ import { Button } from 'reactstrap';
 export default function Header() {
   return (
     <header className="ui centered">
-      <h1 className="ui center">CHORE TRACKER</h1>
-      <nav className = "links">          
-          <Link to="/signin"> <Button color="success"> Login </Button></Link>
-          <Link to="/signup"> <Button color="success"> Register </Button> </Link>
+     
+      <nav className="links"> 
+      <h5 className="ui center">CHORE TRACKER</h5>    
+          <Link to="/FamilyPage"> <Button color="success"> Family Page </Button> </Link>      
           <Link to="/ParentTaskList"> <Button color="success"> Parent Dashboard </Button> </Link>
           <Link to="/ChildTaskList"> <Button color="success"> Child Dashboard </Button> </Link>
-          <Link to="/FamilyPage"> <Button color="success"> Family Page </Button> </Link> 
           <Link to="/ManageChores"> <Button color="success"> Chore Management </Button> </Link> 
+          <Link to="/signup"> <Button color="success"> Register </Button> </Link>
+          <Link to="/signin"> <Button color="success"> Login </Button></Link>
+
         </nav>
     </header>
   );

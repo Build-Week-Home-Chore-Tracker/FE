@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axiosWithAuth from "../../utils/axiosWithAuth";
 import { connect } from "react-redux";
-
+import "./Points.scss";
 
 
   class Points extends React.Component {
@@ -42,7 +42,7 @@ import { connect } from "react-redux";
   return (
     <>
      <div className="points">
-       <h1>Points</h1>
+       <h3>Total Points</h3>
        {this.totalPoints()}
        
       </div>

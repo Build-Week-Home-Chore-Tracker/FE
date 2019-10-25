@@ -12,7 +12,7 @@ export const fetch_chores = () => dispatch => {
     .get("/chores")
     .then(res => {
       console.log(res.data);
-      dispatch({type: CHORES_FETCH_DONE, payload: res.data});
+      dispatch({type: CHORES_FETCH_DONE, payload: res.data.slice(1, 10)});
     }).catch(err =>  {
         console.log(err);
         dispatch({type: CHORES_FETCH_ERROR});

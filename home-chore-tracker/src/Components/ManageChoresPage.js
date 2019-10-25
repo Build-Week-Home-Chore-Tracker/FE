@@ -18,12 +18,15 @@ const ManageChoresPage = ({}) => {
         .catch(err => console.log(err.response));
     }
 
+ 
+
   return (
         <div className="chores-wrap">
-            Chore management page
+            <h1>Chore management</h1>
             <AddChore />
-            
+            <div className="chore-list">
             <ListChores />
+            </div>
         </div>
   );
 };

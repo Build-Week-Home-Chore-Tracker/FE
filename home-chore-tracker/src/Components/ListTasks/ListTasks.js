@@ -3,6 +3,8 @@ import Loader from "react-loader";
 import { connect } from "react-redux";
 import { list_tasks, update_task } from "../../actions";
 
+import Points from "../Points/Points";
+
 class ListTasks extends React.Component {
     componentDidMount() {
         this.props.list_tasks()
@@ -30,16 +32,21 @@ class ListTasks extends React.Component {
                     <label>
                  {task.choreName} 
                  {task.choreId} 
-                    <input
+                    <input className="checkbox"
                     type="checkbox"
                     value={task.choreName}
                     checked={task.isDone}
                     onChange={this.toggleCheckboxChange}
                     />
                     </label>
+                    <hr /> 
                 </div>
+                
             ))}
 
+    <div className="chore-points">
+       <Points />
+      </div>
            </div>
     }
 }

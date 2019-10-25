@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Roboto";
 }
 
 code {
@@ -17,11 +18,9 @@ code {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 70px;
 }
 
-/* .card-deck{  
-  
-} */
 
 .row-container{
   display: flex;
@@ -55,12 +54,18 @@ code {
 
   .ui.center{
     text-align: center;
-    padding: 2rem;
-    background-color: #055596;
+    color: #055596;
+    font-weight: bold;
   }
 
   .individualCards{
     width: 15 rem;
   }
 
-  
+  .Onboard-form{
+    margin-top: 40px;
+  }
+
+  .signup-header{
+    padding-top: 10px;
+  }
