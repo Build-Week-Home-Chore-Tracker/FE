@@ -26,7 +26,7 @@ code {
 .row-container{
   display: flex;
   flex-direction: column;
-  height: 30vh;
+  height: 50vh;
   justify-content: space-around;
   margin-left: auto;
   margin-right: auto;  
@@ -72,10 +72,15 @@ code {
   }
 
   .signUpForm{
-    max-width: 30%;
+    width: 30%;
+    height: 50vh;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 70px;
+  }
+
+  .text-center.card.text-white.card-body.bg-success{
+    height: 50vh;
   }
   
