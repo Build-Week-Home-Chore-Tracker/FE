@@ -10,7 +10,8 @@ export default function Header() {
           <Link to="/signin"> <Button color="success"> Login </Button></Link>
           <Link to="/signup"> <Button color="success"> Register </Button> </Link>
           <Link to="/ParentTaskList"> <Button color="success"> Parent Dashboard </Button> </Link>
-          <Link to="/ChildTaskList"> <Button color="success"> Child Dashboard </Button> </Link> 
+          <Link to="/ChildTaskList"> <Button color="success"> Child Dashboard </Button> </Link>
+          <Link to="/FamilyPage"> <Button color="success"> Family Page </Button> </Link> 
         </nav>
     </header>
   );
