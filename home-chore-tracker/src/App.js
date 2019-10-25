@@ -16,12 +16,10 @@ function App() {
   return (
     <div className="App">     
       <Router>
-        
         <Header />
-
-        <Switch>
+    <Switch>
       
-          {/* <Route exact path="/" component={SignIn} /> */}
+          <Route exact path="/" component={SignUp} />
           <Route path="/signin" component={SignIn} />
           <Route exact path="/signup">
             <SignUp />
@@ -30,20 +28,7 @@ function App() {
           <PrivateRoute exact path="/ChildTaskList" component={ChildTaskList} />
           <PrivateRoute exact path="/ParentTaskList" component={ParentTaskList} />
           <PrivateRoute exact path="/ManageChores" component={ManageChoresPage} />
-
-          {/* <Route path="/signin">
-            <SignIn />
-          </Route>
-
-          <Route path="/signup">
-            <SignUp />
-          </Route>
-
-          <PrivateRoute exact path="/FamilyPage" component={FamilyPage} />
-          <PrivateRoute exact path="/ChildTaskList" component={ChildTaskList} />
-          <PrivateRoute exact path="/ParentTaskList" component={ParentTaskList} /> */}
-        
-        </Switch>
+ </Switch>
       </Router>
     </div>
   );

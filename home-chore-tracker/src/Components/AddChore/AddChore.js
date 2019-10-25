@@ -27,11 +27,11 @@ class AddChore extends React.Component {
     render() {
     
         return <div className="chores-wrap">
-            Add Chore
+        
 
             <form onSubmit={this.addNewChore}>
 
-              <legend>add chore</legend>
+              {/* <legend>add chore</legend> */}
               <label>
                 chore name:
                 <input 

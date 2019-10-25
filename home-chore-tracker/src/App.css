@@ -1,25 +1,6 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-
-.App-link {
-  color: #09d3ac;
+  font-family: "Roboto";
 }
 
 
@@ -40,10 +21,10 @@
 
 .chore-list{
   border: 2px solid lightgray;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   width: 40%;
   margin: 0 auto;
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 
 .add-chore{
@@ -58,4 +39,57 @@
   color: red;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.checkbox{
+ margin-left: 12px;
+ background: red;
+}
+
+.dash {
+  color: green;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.rewards-list{
+  border: 2px solid lightgray;
+  /* width: 50%; */
+  /* margin: 0 auto; */
+}
+
+.points{
+  border: 2px solid lightgray;
+  width: 50%;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.nav-bar{
+  margin: 0;
+}
+
+.assign-chore{
+  margin-top: 35px;
+}
+
+hr{
+  border: 1px solid dimgrey;
+  width: 70%;
+}
+
+.child-chores {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+
+}
+
+.chore-list{
+  width: 40%;
+ 
+}
+
+.rewards-list{
+  width:40%;
 }

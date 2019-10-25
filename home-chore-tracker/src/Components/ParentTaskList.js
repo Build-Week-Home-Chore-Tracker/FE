@@ -94,11 +94,11 @@ const ParentTaskList = () => {
       <>
 
 
-        <div className="family-tasks">
+        <div className="assign-chore">
         <div>
         {/* <Link to="/ChildTaskList"><button>Child Task List</button></Link> */}
       </div>
-         <h1>Family Home Chore Tracker</h1>
+         <h1>Assign chores</h1>
           
 
             <select onChange={handleSelectChange}>
