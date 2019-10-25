@@ -22,6 +22,7 @@ code {
 }
 
 
+
 .row-container{
   display: flex;
   flex-direction: column;
@@ -69,3 +70,12 @@ code {
   .signup-header{
     padding-top: 10px;
   }
+
+  .signUpForm{
+    max-width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+  }
+  
