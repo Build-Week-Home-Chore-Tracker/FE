@@ -61,12 +61,11 @@
 }
 
 .points{
-  border: 2px solid lightgray;
+  border: 2px solid orange;
   width: 30%;
   border-radius: 10px;
   margin: 0 auto;
   margin-top: 120px;
-  background: orange;
   color: darkblue;
   font-size: 1.2rem;
 }
@@ -113,14 +112,31 @@ hr{
 
 
 footer{
-  background-color:orange;
+
+  background-color: #f6d327;
+  background-color: #f9484a;
+  background-image: linear-gradient(315deg, #f9484a 0%, #fbd72b 74%);
   padding: 2%;
   color: darkblue;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
 }
 
 .h3{
   margin-top: 12px;
+}
+
+.chores-add{
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border: 1px solid lightgray;
+  width: 40%;
+}
+
+.add-button{
+  border: 2px solid orange;
+  width: 120px;
+  margin-left: 20px;
 }

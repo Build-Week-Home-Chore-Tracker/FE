@@ -1,9 +1,7 @@
 import React, { useState, useEffect, forceUpdate } from 'react';
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { Link } from "react-router-dom";
-// import ChildTaskList from './ChildTaskList';
-// import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-// import ParentChoreSearch from './ParentChoreSearch';
+
 
 
 
@@ -48,7 +46,7 @@ const ParentTaskList = () => {
     const assignChoreHandle = e => {
       // e.preventDefaut();
       console.log("Assigning!");
-      // return false;
+   
       axiosWithAuth()
       .post(`assign/user/${localStorage.getItem('userId')}`, {choreId: choreId})
       .then(res => {
@@ -80,7 +78,6 @@ const ParentTaskList = () => {
     }
 
     const deleteChore = chore => {
-      // e.preventDefault();
      axiosWithAuth()
       .delete(`/assign/user/chore/${chore.choreListId}/delete`) 
       .then(res => {
@@ -104,7 +101,7 @@ const ParentTaskList = () => {
             ))
             }
             </select>
-            <button className="chore-btn" onClick={assignChoreHandle}>Assign Chore</button>
+            <button className="chore-btn add-button" onClick={assignChoreHandle}>Assign Chore</button>
 
 
          <div className="chore-list">

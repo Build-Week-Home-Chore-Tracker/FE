@@ -26,14 +26,14 @@ class AddChore extends React.Component {
 
     render() {
     
-        return <div className="chores-wrap">
+        return <div className="chores-add">
         
-
+          <h3>Add your chore</h3>
             <form onSubmit={this.addNewChore}>
 
               {/* <legend>add chore</legend> */}
               <label>
-                chore name:
+            
                 <input 
                         type=          "text"
                         name=          "choreName"
@@ -43,7 +43,8 @@ class AddChore extends React.Component {
                     />
 
               </label>
-              <label>Chore points:
+              <label> 
+             
                   <select name="chorePoints" onChange={this.handleChanges}>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -52,8 +53,9 @@ class AddChore extends React.Component {
                         <option value="5">5</option>
                   </select>
               </label>
-              <button type="submit">add</button>
+              <button className="add-button" type="submit">Add Chore</button>
             </form>
+
         </div>
     }
 }
