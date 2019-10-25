@@ -5,10 +5,12 @@ import ChildTaskList from './Components/ChildTaskList';
 // import Signin from './Components/Signin';
 import PrivateRoute from './Components/PrivateRoute';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Components/Header';
 import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
 import FamilyPage from './Components/FamilyPage';
+import ManageChoresPage from './Components/ManageChoresPage'
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
           <PrivateRoute exact path="/FamilyPage" component={FamilyPage} />
           <PrivateRoute exact path="/ChildTaskList" component={ChildTaskList} />
           <PrivateRoute exact path="/ParentTaskList" component={ParentTaskList} />
+          <PrivateRoute exact path="/ManageChores" component={ManageChoresPage} />
 
           {/* <Route path="/signin">
             <SignIn />

@@ -49,16 +49,6 @@ const ParentTask = ({ chores, updateChores }) => {
     .catch(err => console.log(err.response));
 
 
-
-    const addNewChore = chore => {
-      axiosWithAuth()
-      .post("/chores", choreAddNew)
-      .then(res => console.log(res))
-      .catch(err => console.log(err.response));
-   }
-
-
-
     const remainingChores =[];
     chores.forEach(chore => {
       if (chore.id !== choreToEdit.id) {
@@ -103,31 +93,8 @@ const ParentTask = ({ chores, updateChores }) => {
           </div>
         </form>
       )}
-
-   
-      {editing && (
-        <form onSubmit={addNewChore}>
-
-          <legend>add chore</legend>
-          <label>
-            chore name:
-            <input
-              onChange={e =>
-                setChoreAddNew({ 
-                  ...choreAddNew, chore: e.target.value })
-              }
-              value={choreAddNew.chore}
-            />
-          </label>
-          <div className="button-row">
-            <button type="submit">add</button>
-            <button onClick={() => setEditing(false)}>cancel</button>
-          </div>
-        </form>
-      )}
     </div>
   );
 };
-
 export default ParentTask;
 

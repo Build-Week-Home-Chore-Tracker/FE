@@ -12,6 +12,7 @@ export default function Header() {
           <Link to="/ParentTaskList"> <Button color="success"> Parent Dashboard </Button> </Link>
           <Link to="/ChildTaskList"> <Button color="success"> Child Dashboard </Button> </Link>
           <Link to="/FamilyPage"> <Button color="success"> Family Page </Button> </Link> 
+          <Link to="/ManageChores"> <Button color="success"> Chore Management </Button> </Link> 
         </nav>
     </header>
   );

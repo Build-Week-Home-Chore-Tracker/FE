@@ -121,22 +121,10 @@ const ParentTaskList = () => {
              ))
            }
          </div>
-
-         <div className="add-chore">
-          <form>
-          <input
-              type="text"
-              placeholder="New Chore"
-          />
-          <button className="add-chore-btn" onClick={() => addNewChore()}>Add New Chore</button>
-          </form>
-      </div>
         </div>
         </>
       );
 }
-
-
 
 export default ParentTaskList;
 
