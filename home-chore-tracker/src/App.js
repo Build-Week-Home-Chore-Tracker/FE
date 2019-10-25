@@ -11,6 +11,7 @@ import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
 import FamilyPage from './Components/FamilyPage';
 import ManageChoresPage from './Components/ManageChoresPage'
+import Footer from './Components/Footer'
 
 
 
@@ -19,7 +20,7 @@ function App() {
     <div className="App">     
       <Router>
         <Header />
-    <Switch>
+        <Switch>
       
           <Route exact path="/" component={SignUp} />
           <Route path="/signin" component={SignIn} />
@@ -30,7 +31,8 @@ function App() {
           <PrivateRoute exact path="/ChildTaskList" component={ChildTaskList} />
           <PrivateRoute exact path="/ParentTaskList" component={ParentTaskList} />
           <PrivateRoute exact path="/ManageChores" component={ManageChoresPage} />
- </Switch>
+        </Switch>
+        <Footer />
       </Router>
     </div>
   );
