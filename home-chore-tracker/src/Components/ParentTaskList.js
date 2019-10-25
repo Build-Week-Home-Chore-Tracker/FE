@@ -7,11 +7,14 @@ import { Link } from "react-router-dom";
 
 
 
+
 const ParentTaskList = () => {
     const [chores, setChores] = useState([]);
     const [choreId, setChoreId] = useState();
     const [assignedChores, setAssignedChores] = useState([]);
-    const [editing, setEditing] = useState(false);
+    const [addChore, setAddChore] = useState([]);
+
+    // const [editing, setEditing] = useState(false);
 
     const findChoreName = id => {
       return chores.filter(c => c.choreId == id)[0].choreName;
@@ -54,7 +57,20 @@ const ParentTaskList = () => {
       }).catch(err => console.log(err))
     }
 
+    const addNewChore = e => {
+      console.log("Deleting!");
+       axiosWithAuth()
+      .post(`chores/chore`)
+      .then(res => {
+        console.log("delete the chore");
+      }).catch(err => console.log(err))
+    }
 
+
+    const handleAddChore = event => {
+      console.log(event.target.value);
+      setAddChore(event.target.value);
+    }
 
 
     const handleSelectChange = event => {
@@ -80,7 +96,7 @@ const ParentTaskList = () => {
 
         <div className="family-tasks">
         <div>
-        <Link to="/ChildTaskList"><button>Child Task List</button></Link>
+        {/* <Link to="/ChildTaskList"><button>Child Task List</button></Link> */}
       </div>
          <h1>Family Home Chore Tracker</h1>
           
@@ -105,6 +121,16 @@ const ParentTaskList = () => {
              ))
            }
          </div>
+
+         <div className="add-chore">
+          <form>
+          <input
+              type="text"
+              placeholder="New Chore"
+          />
+          <button className="add-chore-btn" onClick={() => addNewChore()}>Add New Chore</button>
+          </form>
+      </div>
         </div>
         </>
       );

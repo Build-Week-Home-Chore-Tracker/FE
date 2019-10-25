@@ -4,11 +4,12 @@ import * as Yup from "yup";
 import { Card, Row, Button, FormGroup, Label, Input, Col} from 'reactstrap';
 import axios from 'axios';
 
-  const SignUp = ({ errors, touched, values, status }) => {
+  const SignUp = ({ errors, touched, values, status } ) => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
       status && setUsers(users => [...users, status]);
     }, [status]);
+   
   
     return (
       <div className="Onboard-form">
@@ -95,13 +96,18 @@ import axios from 'axios';
      }),
   
     handleSubmit(values, { setStatus }) {
+
+      // const {history} = this.props;
+      console.log("this.props")
       axios
         // values is our object with all our data on it.
         .post("https://home-chore-tracker88.herokuapp.com/api/auth/register", values)
         .then(res => {
           console.log(res);
           setStatus(res.data);
-          
+          console.log(res.status);
+          window.location = "/signin"
+
         })
         .catch(err => console.log(err.response));
     }

@@ -4,10 +4,10 @@ import Points from "./Points";
 import { Link } from "react-router-dom";
 
 
+
 function ChildTaskList() {
   const [chores, setChores] = useState([]);
-
-  
+ 
   useEffect(() => {
     axiosWithAuth()
       .get(`/assign/chores/user/${localStorage.getItem('userId')}`)
@@ -20,10 +20,10 @@ function ChildTaskList() {
 
   
 
-  return (
+return (
     <>
      <div className="family-tasks">
-     <Link to="/ParentTaskList"><button>Assign Tasks</button></Link>
+     {/* <Link to="/ParentTaskList"><button>Assign Tasks</button></Link> */}
        <h1>Child Home Chore Tracker</h1>
         {chores.map(chore => (
           <div>
