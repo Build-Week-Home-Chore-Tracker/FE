@@ -12,6 +12,8 @@ import SignUp from './Components/SignUp';
 import FamilyPage from './Components/FamilyPage';
 import ManageChoresPage from './Components/ManageChoresPage'
 
+
+
 function App() {
   return (
     <div className="App">     
@@ -32,5 +34,7 @@ function App() {
       </Router>
     </div>
   );
+
 }
 export default App;
+

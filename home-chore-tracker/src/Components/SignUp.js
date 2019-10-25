@@ -12,11 +12,12 @@ import axios from 'axios';
    
   
     return (
-      <div className="Onboard-form">
+      <div className="signUpform">
         
             <Card body inverse color="success" className="text-center">
                 <Form className= "row-container">
-                  <h4 className="signup-header">Please Register</h4>
+                  
+                    <h4 className="signup-header">Please Register</h4>
                     <Row>
                         <Field 
                             type="text" 
