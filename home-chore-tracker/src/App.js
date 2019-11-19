@@ -45,11 +45,11 @@ function App() {
             <SignUp />
           </Route>
 
-          <Route path="/parenttasklist">
+          <Route path="/ParentTaskList">
             <ParentTaskList />
           </Route>
 
-          <Route path="/childtasklist">
+          <Route path="/ChildTaskList">
             <ChildTaskList />
           </Route>
 
