@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Roboto";
 }
 
 code {
@@ -12,23 +13,25 @@ code {
     monospace;
 }
 
-.Onboard-form{
+.signInForm{
   width: 30%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+<<<<<<< HEAD
   padding-top: 10%;
   padding-bottom: 15%;
+=======
+  margin-top: 70px;
+>>>>>>> d939a235d629cd5e15fd22e17dea6bdf3699a5de
 }
 
-/* .card-deck{  
-  
-} */
+
 
 .row-container{
   display: flex;
   flex-direction: column;
-  height: 30vh;
+  height: 50vh;
   justify-content: space-around;
   margin-left: auto;
   margin-right: auto;  
@@ -57,6 +60,45 @@ code {
 
   .ui.center{
     text-align: center;
+<<<<<<< HEAD
     padding: 2rem;
     background-color: #055596;
+=======
+    color: #055596;
+    font-weight: bold;
+  }
+
+  .Onboard-form{
+    margin-top: 40px;
+  }
+
+  .signup-header{
+    padding-top: 10px;
+  }
+
+  .signUpForm{
+    width: 30%;
+    height: 50vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+  }
+
+  .text-center.card.text-white.card-body.bg-success{
+    height: 50vh;
+  }
+  
+  /* .individualCards{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  } */
+
+  .col-sm-3 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5rem;
+>>>>>>> d939a235d629cd5e15fd22e17dea6bdf3699a5de
   }

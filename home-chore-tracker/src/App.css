@@ -1,23 +1,142 @@
 .App {
   text-align: center;
+  font-family: "Roboto";
+}
+
+
+.chore-card{
+  border: 3px solid lightgray;
+  width: 60%;
+  margin:0 auto;
+  height: 60px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.chore-btn{
+  margin-right: 10px;
+  margin-left: 10px;
   
 }
 
-.App-logo {
-  height: 40vmin;
+.chore-list{
+  border: 2px solid lightgray;
+  width: 40%;
+  margin: 0 auto;
+  width: 40%;
+  height: 100%;
+  box-shadow: -10px -10px 30px 4px rgba(0,0,0,0.1),
+  10px 10px 30px 4px rgba(45,78,255,0.15);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.add-chore{
+  margin-top: 30px;
 }
 
-.App-link {
-  color: #09d3ac;
+.add-chore-btn{
+  margin-left: 10px;
+}
+
+.delete{
+  color: red;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.checkbox{
+ margin-left: 12px;
+ background: red;
+}
+
+.dash {
+  color: green;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.rewards-list{
+  border: 2px solid lightgray;
+  /* width: 50%; */
+  /* margin: 0 auto; */
+}
+
+.points{
+  border: 2px solid orange;
+  width: 30%;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 120px;
+  color: darkblue;
+  font-size: 1.2rem;
+}
+
+.nav-bar{
+  margin: 0;
+}
+
+.assign-chore{
+  margin-top: 35px;
+}
+
+hr{
+  border: 1px solid dimgrey;
+  width: 70%;
+}
+
+.child-chores {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    margin-top: 30px;
+}
+
+
+
+.rewards-list{
+  width: 40%;
+  margin-right: 80px;
+  height: 100%;
+  margin-bottom: 20px;
+  box-shadow: -10px -10px 30px 4px rgba(0,0,0,0.1),
+  10px 10px 30px 4px rgba(45,78,255,0.15);
+}
+
+.main-header{
+  margin-top: 15px;
+}
+
+.chore-btn{
+  margin-bottom: 40px;
+
+}
+
+
+footer{
+
+  background-color: #f6d327;
+  background-color: #f9484a;
+  background-image: linear-gradient(315deg, #f9484a 0%, #fbd72b 74%);
+  padding: 2%;
+  color: darkblue;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.h3{
+  margin-top: 12px;
+}
+
+.chores-add{
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border: 1px solid lightgray;
+  width: 40%;
+}
+
+.add-button{
+  border: 2px solid orange;
+  width: 120px;
+  margin-left: 20px;
 }

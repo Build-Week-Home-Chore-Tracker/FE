@@ -2,35 +2,54 @@ import React , { useState, useEffect } from 'react';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from "yup";
 import { Card, Row, Button, FormGroup, Label, Input, Col} from 'reactstrap';
+<<<<<<< HEAD
 
   const SignUp = ({ errors, touched, values, status }) => {
+=======
+import axios from 'axios';
+
+  const SignUp = ({ errors, touched, values, status } ) => {
+>>>>>>> d939a235d629cd5e15fd22e17dea6bdf3699a5de
     const [users, setUsers] = useState([]);
     useEffect(() => {
       status && setUsers(users => [...users, status]);
     }, [status]);
+   
   
     return (
-      <div className="Onboard-form">
+      <div className="signUpForm">
         
             <Card body inverse color="success" className="text-center">
-                <Form className = "row-container">
+                <Form className= "row-container">
+
+                    <h4 className="signup-header">Please Register</h4>
                     <Row>
                         <Field 
                             type="text" 
-                            name="email" 
-                            placeholder="email" />
-                            {touched.email && errors.email && (
-                            <p className="error">{errors.email}</p>
+                            name="username" 
+                            placeholder="username" />
+                            {touched.username && errors.username && (
+                            <p className="error">{errors.username}</p>
                             )}
                     </Row>
 
                     <Row>
                         <Field 
                             type="text" 
-                            name="familyname" 
+                            name="name" 
+                            placeholder="name" />
+                            {touched.username && errors.name && (
+                            <p className="error">{errors.name}</p>
+                            )}
+                    </Row>
+
+                    <Row>
+                        <Field 
+                            type="text" 
+                            name="familyNameID" 
                             placeholder="Family Name" />
-                            {touched.familyname && errors.familyname && (
-                            <p className="error">{errors.familyname}</p>
+                            {touched.familyNameID && errors.familyNameID && (
+                            <p className="error">{errors.familyNameID}</p>
                             )}
                     </Row>
                     
@@ -67,29 +86,37 @@ import { Card, Row, Button, FormGroup, Label, Input, Col} from 'reactstrap';
     );
   };
 
-  const FormikSignUp = withFormik({mapPropsToValues({email,familyname, password, terms}) {
+  const FormikSignUp = withFormik({mapPropsToValues({username, name, familyNameID, password}) {
       return {
-        email: email || "",
-        familyname: familyname || "",
+        username: username || "",
+        name: name || "",
+        familyNameID: familyNameID || "",
         password: password || ""
       };
     },
   
     validationSchema: Yup.object().shape({
-      email: Yup.string().required("email is required"),
-      familyname: Yup.string().required("Family Name is required"),
+      username: Yup.string().required("username is required"),
+      name: Yup.string().required("name is required"),
+      familyNameID: Yup.string().required("Family Name is required"),
       password: Yup.string().required("Password is required")   
      }),
   
-    // handleSubmit(values, { setStatus }) {
-    //   axios
-    //     // values is our object with all our data on it.
-    //     .post("https://reqres.in/api/users/", values)
-    //     .then(res => {
-    //       setStatus(res.data);
-    //       console.log(res);
-    //     })
-    //     .catch(err => console.log(err.response));
-    // }
+    handleSubmit(values, { setStatus }) {
+
+      // const {history} = this.props;
+      console.log("this.props")
+      axios
+        // values is our object with all our data on it.
+        .post("https://home-chore-tracker88.herokuapp.com/api/auth/register", values)
+        .then(res => {
+          console.log(res);
+          setStatus(res.data);
+          console.log(res.status);
+          window.location = "/signin"
+
+        })
+        .catch(err => console.log(err.response));
+    }
   })(SignUp); // currying functions in Javascript
  export default FormikSignUp;
